@@ -34,10 +34,8 @@ const serviceTypes = {
 }
 
 server.get('/images', async function (req, res) {
-  //const address = req.body.address
-  //const service = req.body.service
-  const service = 'prnt.sc'
-  const address = 'https://prnt.sc/100006'
+  const address = req.body.address
+  const service = req.body.service
 
   if(typeof address === 'string') {
     let images = []
@@ -61,10 +59,7 @@ server.get('/images', async function (req, res) {
           return // response has been sent to the client. Terminate
       }
       res.status(200).send(
-          {
-            status: 'success',
-            images: images
-          }
+          images.toString()
       )
     } catch (error) {
       console.log(error)
