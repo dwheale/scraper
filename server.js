@@ -36,6 +36,7 @@ const serviceTypes = {
 server.get('/images', async function (req, res) {
   const address = req.body.address
   const service = req.body.service
+  res.set('Content-Type', 'text/json')
 
   if(typeof address === 'string') {
     let images = []
@@ -58,8 +59,8 @@ server.get('/images', async function (req, res) {
           res.status(400).send({ error: 'No known service has been specified' })
           return // response has been sent to the client. Terminate
       }
-      res.status(200).send(
-          images.toString()
+      res.status(200).json(
+          images
       )
     } catch (error) {
       console.log(error)
