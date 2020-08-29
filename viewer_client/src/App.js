@@ -36,26 +36,6 @@ const App = () => {
     }
 
     getAndValidateImages().then()
-
-    // try {
-    //   getImages(service.address + location.pathname, service.name) // Fetch the images
-    //       .then((images) => {
-    //         validateImages(images)
-    //             .then(validImages => {
-    //               console.log('%cvalidated images: ', 'color: red', validImages)
-    //               dispatch({ // Send the images to state
-    //                 type: ImageActionTypes.UPDATE_CURRENT_IMAGES,
-    //                 payload: validImages
-    //               })
-    //             })
-    //
-    //         //history.push(getNextAddress(registeredAddress, service.name))
-    //
-    //       })
-    // } catch (err) {
-    //   console.log(err)
-    // }
-
   }, [location])
 
   return (

@@ -34,6 +34,7 @@ const serviceTypes = {
 }
 
 server.post('/images', async function (req, res) {
+  console.log('/images called: ', req.body)
   const address = req.body.address
   const service = req.body.service
   res.set('Content-Type', 'text/json')

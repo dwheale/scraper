@@ -1,5 +1,5 @@
 {
-  "name": "prnt-sc-viewer",
+  "name": "viewer_client",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
