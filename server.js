@@ -15,8 +15,8 @@ server.use(cors())
 if (process.env.NODE_ENV === 'production') {
   server.use(express.static(path.join(__dirname, 'client/build')))
 
-  server.get('*', function (req, res) {
-    res.sendFile(path.join(__dirname, 'client/build', 'index.html'))
+  server.get('/images', function (req, res) {
+    res.sendFile(path.join(__dirname, 'viewer_client/build', 'index.html'))
   })
 }
 
@@ -33,7 +33,7 @@ const serviceTypes = {
   PRNT_SC: 'prnt.sc',
 }
 
-server.get('/images', async function (req, res) {
+server.post('/images', async function (req, res) {
   const address = req.body.address
   const service = req.body.service
   res.set('Content-Type', 'text/json')

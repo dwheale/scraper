@@ -1,14 +1,16 @@
 {
   "name": "image-scraper",
   "version": "1.0.0",
-  "description": "",
+  "description": "image scraper for personal use only",
   "main": "index.js",
   "scripts": {
+    "client": "cd viewer_client && npm start",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "node server.js",
+    "build": "cd viewer_client && npm run build",
+    "heroku-postbuild": "npm install && cd client && npm install --only=dev --no shrinkwrap && npm run build"
   },
-  "keywords": [],
-  "author": "",
+  "author": "David Wheale",
   "license": "ISC",
   "dependencies": {
     "axios": "^0.20.0",
